@@ -1,0 +1,77 @@
+//Percentage Calculator
+
+function whatsThePercentage(percentage, theNumber) {
+    var percentOfNumber = percentage * theNumber/100;
+    return percentOfNumber;
+}
+
+console.log(whatsThePercentage(25, 100));
+console.log(whatsThePercentage(10, 300));
+console.log(whatsThePercentage(18, 78));
+
+//Drinks Calculator
+
+function drinkOrder(size, drink) {
+    switch (drink) {
+        case 'cola':
+            return outputDrinksOrder(size, ' cola');
+            break;
+        case 'lemon':
+                return outputDrinksOrder(size, ' lemon');
+                break; 
+        case 'orange':
+                    return outputDrinksOrder(size, ' orange');
+                    break;  
+    }
+}
+
+function outputDrinksOrder(size, drink) {
+    switch(size) {
+        case 'small':
+            return 'You have ordered a small of' + drink;
+            break;
+        case 'medium':
+            return 'You have ordered a medium of' + drink;
+            break;
+        case 'large':
+            return 'You have ordered a large of' + drink;
+            break;       
+    }
+}
+
+console.log(drinkOrder('small', 'lemon'));
+console.log(drinkOrder('medium', 'orange'));
+console.log(drinkOrder('large', 'cola'));
+
+//Operators Calculator
+
+
+function calculator(number1, number2, operator) {
+    switch(operator){
+        case '+':
+            var result = number1 + number2;
+            console.log(number1, operator, number2, '=', result);
+            break;
+        case '-':
+                var result = number1 - number2;
+                console.log(number1, operator, number2, '=', result);
+                break;
+        case '*':
+            var result = number1 * number2;
+            console.log(number1, operator, number2, '=', result);
+            break;
+        case '/':
+            var result = number1 / number2;
+            console.log(number1, operator, number2, '=', result);
+            break;
+        case '%':
+            var result = number1 % number2;
+            console.log(number1, operator, number2, '=', result);
+            break;
+    }
+}
+calculator(34, 60, '+');
+calculator(10, 14, '-');
+calculator(55, 5, '*');
+calculator(2034, 3, '/');
+calculator(104, 5, '%');
