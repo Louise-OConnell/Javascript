@@ -1,0 +1,42 @@
+//7 times table loop
+for (let i = 1; i <= 12; i++){
+    let result = i * 7;
+    console.log(result);
+}
+
+//7 times table concatinated version
+for (let i = 1; i <= 12; i++){
+    console.log(`${i} x 7 = ${i*7}`)
+}
+
+//Fave food array
+let myFaveFoods = [
+    'Pasta',
+    'Pizza',
+    'Chocolate',
+    'Sweet Potatoes',
+]
+
+console.log(myFaveFoods[0]);
+console.log(myFaveFoods[2]);
+
+for (let i = 0; i < myFaveFoods.length; i++){
+    console.log(myFaveFoods[i]);
+}
+
+//Recipe Object
+let myRecipe = {
+    title: 'Mashed Potato',
+    servings: '4',
+    ingredients: ['potatoes', 'milk', 'butter'],
+    directions: ['First you chop the potatoes.', 'Then boil them in a pan.', 'When the potatoes are soft drain them.', 'Add milk and butter and mash!'],
+    letsCook: function(title){
+        document.write('I am hungry! Lets cook ' + title + '.')
+    }
+}    
+
+document.write(myRecipe.title + '<br>');
+document.write(myRecipe.servings + '<br>');
+document.write(myRecipe.ingredients + '<br>');
+document.write(myRecipe.directions + '<br>');
+myRecipe.letsCook(myRecipe.title);
