@@ -1,18 +1,16 @@
 // JavaScript Tip Calculator
 
-var total = 40;
+function bill(whatIsMyBill) {
+    let totalBill = 50;
+    let tipPercent = 15;
+    let tip = (totalBill / 100) * tipPercent;
+    let totalBillWithTip = totalBill + tip; 
+ document.getElementById("myBill").innerHTML = totalBillWithTip;
+}
+document.write(totalBillWithTip);
 
-var tipPercent = 15;
-
-var tip = (40 / 100) * 15;
-
-var totalWithTip = total + tip;
-
-document.write('Your total bill before tips is £', + total + '.');
-
-document.write('You have paid a 15% tip, thank you!');
-
-document.write('Your new bill total is £' + totalWithTip + '.');
-
-document.write('Thank you for your tip of £' + tip + '.');
-
+<h2>Tip Calculator</h2>
+<h4>Your bill is £50</h4>
+<p>Your bill total with 15% tip is?</p>
+<input type="text" id="Number" placeholder="enter your bill" oninput="bill(this.value)">
+<p id="myBill"></p>
