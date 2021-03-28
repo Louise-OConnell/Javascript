@@ -1,0 +1,53 @@
+//The DOM Practical
+
+//Task 1
+function task1() {
+    var task1Image = document.getElementsByTagName('img')[0];
+    task1Image.src = "http://placekitten.com/g/200/200";
+    var task1Header = document.getElementById('task1-header');
+    task1Header.style.color = 'red';
+  } 
+
+//Task 2
+function task2(){
+      var theP = document.createElement('p');
+      var theText = document.createTextNode('Welcome to senior kittizen!');
+      theP.appendChild(theText);
+
+      var task2wrapper = document.getElementById('task2wrapper');
+      task2wrapper.appendChild(theP);
+  }
+
+//Task 3 
+function task3() {
+    var theSquare=document.getElementById('task3-square');
+    theSquare.addEventListener('mouseover',function(){
+      alert('text goes here');
+    });
+}
+//task3();
+
+//Task 4
+function task4() {
+    var theLink = document.getElementById('task4-link');
+    var myInterceptFunction = function(event) {
+      event.preventDefault();
+      alert('Do you really want to leave my site?');
+    };
+    theLink.addEventListener('click', myInterceptFunction);
+  }
+  //task4();
+
+//Task 5
+
+function task5() {
+    var theInput = document.getElementById('task5-input');
+    var theButton = document.getElementById('task5-submit');
+    var theOutput = document.getElementById('task5-output');
+    var mySubmitFunction = function(dave) {
+      dave.preventDefault();
+      theOutput.innerHTML = theInput.value + ' * 5 = ' + (5 * theInput.value);
+    };
+    theButton.addEventListener('click', mySubmitFunction);
+  }
+  //task5(); 
