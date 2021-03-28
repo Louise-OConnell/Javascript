@@ -1,0 +1,124 @@
+//Shopping Basket
+
+//Array-list of items
+
+let shoppingCart = [
+    {
+        name:"loaf of bread",
+        type:"food",
+        quantity:1,
+        price:.85
+    },
+    {
+        name:"multipack beans",
+        type:"food",
+        quantity:2,
+        price:1
+    },
+    {
+        name:"mushrooms",
+        type:"food",
+        quantity:10,
+        price:.1
+    },
+    {
+        name:"can of beer",
+        type:"alcohol",
+        quantity:4,
+        price:1.1
+    },
+    {
+        name:"prosecco",
+        type:"alcohol",
+        quantity:1,
+        price:8.99
+    },
+    {
+        name:"steak",
+        type:"food",
+        quantity:2,
+        price:3.99
+    },
+    {
+        name:"blue cheese",
+        type:"food",
+        quantity:1,
+        price:2.99
+    },
+    {
+        name:"candles",
+        type:"home",
+        quantity:3,
+        price:1.99
+    },
+    {
+        name:"cheesecake",
+        type:"food",
+        quantity:1,
+        price:4.99
+    },
+    {
+        name:"onions",
+        type:"food",
+        quantity:3,
+        price:.4
+    },
+];
+
+console.log(shoppingCart);
+
+//1. Array, function, object, loop, if statement.
+
+function shoppingTotal(cart){
+    let totalPrice = 0;
+    for(let i = 0; i < cart.length; i++){
+        let itemPrice = cart[i].price;
+        if(cart[i].type === 'food'){
+            itemPrice = 0.8 * itemPrice;
+        }
+        let itemQuantity = cart[i].quantity;
+        let itemTotalprice = itemPrice * itemQuantity;
+        totalPrice = totalPrice + itemTotalprice;
+    }
+    return totalPrice.toFixed(2);
+}
+console.log(shoppingTotal(shoppingCart));
+
+//2. Array, function, object, loop, if statement.
+
+function shoppingTotalBetter(cart, discountAmount, type){
+    let totalPrice = 0;
+    for(let i = 0; i < cart.length; i++){
+        let itemPrice = cart[i].price;
+        //console.log(totalPrice);
+        if(cart[i].type === type){
+            itemPrice = (100 - discountAmount) / 100 * itemPrice;
+        }
+        //console.log(itemPrice);
+        let itemQuantity = cart[i].quantity;
+        let itemTotalprice = itemPrice * itemQuantity;
+        totalPrice = totalPrice + itemTotalprice;
+    }
+    return totalPrice.toFixed(2);
+} 
+
+    console.log(shoppingTotalBetter(shoppingCart, 20, 'home'));
+    console.log(shoppingTotalBetter(shoppingCart, 86, 'home'));
+    console.log(shoppingTotalBetter(shoppingCart, 5, 'home'));
+    console.log(shoppingTotalBetter(shoppingCart, 60, 'home'));
+
+//3. Array, function, object, loop, if statement.
+
+function shoppingTotal3(cart, lowprice, highPrice, quantity){
+    let arrItems = [];
+    for (let i = 0; i < cart.length; i++) {
+        if (quantity === true) {
+            let itemPrice = cart[i].price * cart[i].quantity;
+            if (itemPrice >= lowprice && itemPrice <= highPrice) {
+                arrItems.push(cart[i]);
+            }
+        }
+        return arrItems;
+    }
+}
+    console.log(shoppingTotal3(shoppingCart, 2, 5, true));
