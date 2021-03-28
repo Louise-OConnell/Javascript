@@ -6,19 +6,19 @@ function hello(firstName, lastName) {
 var sayFullName = hello('Louise', 'OConnell')
 console.log(sayFullName)
 
-//Temperature function
-var currentTemperature = 40
-
+//Temperature function & conditional statements
 function putOnCoat(temperature){
-    if(temperature < 50 && temperature > 30){
-        console.log("put on a coat")
-    } else if (temperature < 30 && temperature > 0){
-        console.log("put on a coat and a hat")
-    } else if (temperature < 0){
-        console.log("stay inside")
-    } else {
-        console.log("pants and vest are fine")
+    let output = '';
+    if(temperature < 20 && temperature > 10){
+        output = "It's a bit chilly out today, please put on a coat."
+    } 
+    else if (temperature < 10 && temperature > 0){
+        output = "Put on a coat, hat, gloves, and scarf."
     }
-}
-
-putOnCoat(currentTemperature)
+    else if (temperature < -0){
+        output = "It might snow today, please stay inside."
+    } else {
+        output = "Pants and vest it is!"
+    }
+  document.getElementById("whatsTheTemp").innerHTML = output;
+ }
